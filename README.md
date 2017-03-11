@@ -1,6 +1,6 @@
 Lambda proxy to internal services
 
-You have to deploy the lambda, and set an API gateway resource that points to it. Also, you'll need to give access rights to your private service to the lambda.
+You have to deploy the lambda, and set an API gateway resource that points to it. Also, you'll need to give access rights to your private service to the lambda. A more detailed manual is available [here](https://www.feval.ca/posts/Lambda-proxy/.
 
 Your choice is between:
 
