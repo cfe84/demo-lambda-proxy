@@ -4,7 +4,7 @@ You have to deploy the lambda, and set an API gateway resource that points to it
 
 Your choice is between:
 
-- `proxy.js` which gives you access to one precise endpoint in one service. Limitting to one endpoint reduces the chances that you're opening something you didn't want to open by mistake.
+- `proxy.js` which gives you access to one precise endpoint in one service. Limiting to one endpoint reduces the chances that you're opening something you didn't want to by mistake.
 - `multiproxy.js` which gives you access to the whole VPC, and requires that you set the host and path in the API Gateway endpoint. This allows one lambda function to act as a proxy to multiple endpoints, so you can create multiple endpoints in Gateway.
 
 # Setup the lambda function
