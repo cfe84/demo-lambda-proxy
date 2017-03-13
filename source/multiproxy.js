@@ -1,6 +1,13 @@
 var https = require('https');
 
 exports.handler = (event, context, callback) => {
+    if (! ("headers" in event))
+        return callback("Missing headers in event body, you need to set body mapping in gateway.");
+    if (! ("body" in event))
+        return callback("Missing body in event body, you need to set body mapping in gateway.");
+    if (! ("target" in event))
+        return callback("Missing target in event body, you need to set body mapping in gateway.");
+    
     var config = event.target;
     
     var options = {
