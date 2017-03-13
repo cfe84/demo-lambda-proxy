@@ -8,8 +8,19 @@ var config = {
 };
 
 exports.handler = (event, context, callback) => {
+    if (! ("headers" in event))
+        return callback("Missing headers in event body, you need to set body mapping in gateway.");
+    if (! ("body" in event))
+        return callback("Missing body in event body, you need to set body mapping in gateway.");
+    
     var headers = { };
-    config.headers.forEach((header) => headers[header] = event.headers[header]);
+    config.headers.forEach(
+        (header) => {
+            if (! (header in event.headers))
+                return callback(`Missing header "${header}"`);
+            else
+                headers[header] = event.headers[header];
+        });
     
     var options = {
         hostname: config.hostname,
