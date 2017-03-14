@@ -15,7 +15,7 @@ exports.handler = (event, context, callback) => {
         port: 443,
         path: config.path,
         method: config.method,
-        headers: config.headers
+        headers: event.headers
     };
    
     var req = https.request(options, (res) => {
