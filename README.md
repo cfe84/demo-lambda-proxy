@@ -56,8 +56,8 @@ In the resource, add a body mapping template that follows this example for `appl
     "method": "GET|PUT|POST|PATCH|WHATEVER"
   },
   "headers": {
-    "Example-Header": $input.params().header.get("Example-Header"),
-    "Other-Header": $input.params().header.get("Other-Header")
+    "Example-Header": "$util.escapeJavaScript($input.params().header.get("Example-Header")"),
+    "Other-Header": "$util.escapeJavaScript($input.params().header.get("Other-Header")")
   }
 }
 ```
